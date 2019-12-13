@@ -1,3 +1,5 @@
+#include "fizzbuzz.h"
+
 #include <algorithm>
 #include <cstdlib>
 #include <fstream>
@@ -21,8 +23,15 @@
 int main(int argc, char *argv[])
 {
 
-    (void)argc;
-    (void)argv;
+    if (argc < 2)
+    {
+        return 1;
+    }
 
+    int value(0);
+    std::stringstream argstr(argv[1]);
+    argstr >> value;
+
+    std::cout << fizzbuzz(value) << std::endl;
     return 0;
 }
